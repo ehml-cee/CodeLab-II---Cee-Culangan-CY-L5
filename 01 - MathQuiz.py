@@ -131,6 +131,37 @@ class MathQuiz:
             command=self.root.destroy
         ).pack(pady=10)
 
+    def displayMain(self):
+        self.stopTimer()
+        self.active = False
+
+        self.game.pack_forget()
+        self.end.pack_forget()
+        self.main.pack(fill="both", expand=True)
+
+        for widget in self.main.winfo_children():
+            widget.destroy()
+
+        tk.Label(
+            self.main,
+            text="SELECT DIFFICULTY LEVEL",
+            font=("Arial", 16, "bold"),
+            bg="#EAF2F8"
+        ).pack(pady=20)
+
+        number = 1
+
+        for level in self.difficulty:
+            tk.Button(
+                self.main,
+                text=f"{number}. {level}",
+                width=20,
+                font=("Arial", 12),
+                command=lambda l=level: self.startQuiz(l)
+            ).pack(pady=8)
+
+            number += 1    
+
 root = tk.Tk()
 app = MathQuiz(root)
 root.mainloop()
