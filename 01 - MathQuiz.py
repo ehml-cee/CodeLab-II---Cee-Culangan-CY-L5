@@ -282,6 +282,20 @@ class MathQuiz:
 
         self.nextQuestion()
 
+    def nextQuestion(self):
+        self.stopTimer()
+
+        if self.current == 10:
+            self.displayResults()
+        else:
+            self.current += 1
+
+            self.counter.config(
+                text=f"Question {self.current} of 10"
+            )
+
+            self.displayQuestion()
+
 root = tk.Tk()
 app = MathQuiz(root)
 root.mainloop()
