@@ -121,7 +121,7 @@ class MathQuiz:
             self.end,
             text="Play Again",
             width=18,
-            command=self.displayMenu
+            command=self.displayMain
         ).pack(pady=10)
 
         tk.Button(
@@ -168,7 +168,7 @@ class MathQuiz:
     def decideOperation(self):
         return random.choice(["+", "-"])
                      
-    def displayProblem(self):
+    def displayQuestion(self):
         num1 = self.randomInt()
         num2 = self.randomInt()
         operation = self.decideOperation()
@@ -189,7 +189,7 @@ class MathQuiz:
         self.active = True
         self.startTimer()
 
-def isCorrect(self):
+    def isCorrect(self):
         if not self.active:
             return
 
@@ -244,6 +244,7 @@ def isCorrect(self):
                 )
 
                 self.root.after(300, self.nextQuestion)
+
 
 root = tk.Tk()
 app = MathQuiz(root)
