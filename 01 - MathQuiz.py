@@ -271,6 +271,16 @@ class MathQuiz:
 
         self.end.pack(fill="both", expand=True)
 
+    def startQuiz(self, level):
+        self.minimum, self.maximum = self.difficulty[level]
+
+        self.score_tracker = 0
+        self.current = 0
+
+        self.main.pack_forget()
+        self.game.pack(fill="both", expand=True)
+
+        self.nextQuestion()
 
 root = tk.Tk()
 app = MathQuiz(root)
