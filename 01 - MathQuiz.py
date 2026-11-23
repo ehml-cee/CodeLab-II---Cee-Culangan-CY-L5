@@ -160,7 +160,10 @@ class MathQuiz:
                 command=lambda l=level: self.startQuiz(l)
             ).pack(pady=8)
 
-            number += 1    
+            number += 1  
+
+    def randomInt(self):
+        return random.randint(self.minimum, self.maximum)              
 
 root = tk.Tk()
 app = MathQuiz(root)
