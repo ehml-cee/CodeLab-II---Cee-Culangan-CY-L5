@@ -163,7 +163,10 @@ class MathQuiz:
             number += 1  
 
     def randomInt(self):
-        return random.randint(self.minimum, self.maximum)              
+        return random.randint(self.minimum, self.maximum) 
+
+    def decideOperation(self):
+        return random.choice(["+", "-"])                 
 
 root = tk.Tk()
 app = MathQuiz(root)
