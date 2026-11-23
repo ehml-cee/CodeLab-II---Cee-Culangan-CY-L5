@@ -296,6 +296,10 @@ class MathQuiz:
 
             self.displayQuestion()
 
+    def startTimer(self):
+        self.time = 10
+        self.updateTimer()
+
 root = tk.Tk()
 app = MathQuiz(root)
 root.mainloop()
