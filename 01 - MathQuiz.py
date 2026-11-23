@@ -245,6 +245,32 @@ class MathQuiz:
 
                 self.root.after(300, self.nextQuestion)
 
+    def displayResults(self):
+        self.stopTimer()
+        self.active = False
+        self.game.pack_forget()
+
+        if self.score_tracker > 90:
+            grade = "A+"
+        elif self.score_tracker >= 80:
+            grade = "A"
+        elif self.score_tracker >= 70:
+            grade = "B"
+        elif self.score_tracker >= 60:
+            grade = "C"
+        elif self.score_tracker >= 50:
+            grade = "D"
+        else:
+            grade = "F"
+
+        self.result.config(
+            text=f"YOU'RE DONE!\n\n"
+                 f"Final Score: {self.score_tracker}/100\n\n"
+                 f"Grade: {grade}"
+        )
+
+        self.end.pack(fill="both", expand=True)
+
 
 root = tk.Tk()
 app = MathQuiz(root)
