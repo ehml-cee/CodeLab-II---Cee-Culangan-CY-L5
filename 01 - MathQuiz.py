@@ -335,6 +335,11 @@ class MathQuiz:
                 1000, self.updateTimer
             )
 
+    def stopTimer(self):
+        if self.duration is not None:
+            self.root.after_cancel(self.duration)
+            self.duration = None
+
 root = tk.Tk()
 app = MathQuiz(root)
 root.mainloop()
