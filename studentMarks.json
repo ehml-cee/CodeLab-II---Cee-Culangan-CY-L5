@@ -1,0 +1,84 @@
+{
+    "studentMarks":[
+        {
+            "std_code": "1345",
+            "std_name": "John Curry",
+            "std_course1": "8",
+            "std_course2": "15",
+            "std_course3": "7",
+            "std_exam": "45"
+        },
+        {
+            "std_code": "2345",
+            "std_name": "Sam Sturtivant",
+            "std_course1": "14",
+            "std_course2": "15",
+            "std_course3": "14",
+            "std_exam": "77"
+        },
+        {
+            "std_code": "9876",
+            "std_name": "Lee Scott",
+            "std_course1": "17",
+            "std_course2": "11",
+            "std_course3": "16",
+            "std_exam": "99"
+        },
+        {
+            "std_code": "3724",
+            "std_name": "Matt Thompson",
+            "std_course1": "19",
+            "std_course2": "15",
+            "std_course3": "11",
+            "std_exam": "81"
+        },
+        {
+            "std_code": "1212",
+            "std_name": "Ron Herrema",
+            "std_course1": "14",
+            "std_course2": "17",
+            "std_course3": "18",
+            "std_exam": "66"
+        },
+        {
+            "std_code": "8439",
+            "std_name": "Jake Hobbs",
+            "std_course1": "10",
+            "std_course2": "11",
+            "std_course3": "10",
+            "std_exam": "43"
+        },
+        {
+            "std_code": "2344",
+            "std_name": "Jo Hyde",
+            "std_course1": "6",
+            "std_course2": "15",
+            "std_course3": "10",
+            "std_exam": "55"
+        },
+        {
+            "std_code": "9384",
+            "std_name": "Gareth Southgate",
+            "std_course1": "5",
+            "std_course2": "6",
+            "std_course3": "8",
+            "std_exam": "33"
+        },
+        {
+            "std_code": "8327",
+            "std_name": "Alan Shearer",
+            "std_course1": "20",
+            "std_course2": "20",
+            "std_course3": "20",
+            "std_exam": "100"
+        },
+        {
+            "std_code": "2983",
+            "std_name": "Les Ferdinand",
+            "std_course1": "15",
+            "std_course2": "17",
+            "std_course3": "18",
+            "std_exam": "92"
+        }
+    ]
+}
