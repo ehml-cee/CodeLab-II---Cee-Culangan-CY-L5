@@ -25,7 +25,7 @@ class MathQuiz:
         }
 
         self.createDesign()
-        self.displayMenu()
+        self.displayMain()
         
 
     def createDesign(self):
@@ -166,7 +166,84 @@ class MathQuiz:
         return random.randint(self.minimum, self.maximum) 
 
     def decideOperation(self):
-        return random.choice(["+", "-"])                 
+        return random.choice(["+", "-"])
+                     
+    def displayProblem(self):
+        num1 = self.randomInt()
+        num2 = self.randomInt()
+        operation = self.decideOperation()
+
+        if operation == "+":
+            self.correct = num1 + num2
+        else:
+            self.correct = num1 - num2
+
+        self.question.config(
+            text=f"{num1} {operation} {num2} = ?"
+        )
+
+        self.entry.delete(0, tk.END)
+        self.entry.focus()
+
+        self.lifelines = 1
+        self.active = True
+        self.startTimer()
+
+def isCorrect(self):
+        if not self.active:
+            return
+
+        try:
+            entry = int(self.entry.get())
+
+        except ValueError:
+            messagebox.showerror(
+                " Nope!",
+                "Thats Not A Valid Number!"
+            )
+            self.entry.delete(0, tk.END)
+            self.entry.focus()
+            return
+
+        if entry == self.correct:
+            self.active = False
+            self.stopTimer()
+
+            if self.lifelines == 1:
+                self.score_tracker += 10
+                points = 10
+            else:
+                self.score_tracker += 5
+                points = 5
+
+            self.feedback.config(
+                text=f"+{points} points !",
+                fg="green"
+            )
+            self.root.after(300, self.nextQuestion)
+
+        else:
+            if self.lifelines == 1:
+                self.lifelines = 2
+
+                messagebox.showwarning(
+                    "Incorrect !",
+                    "try againnn"
+                )
+
+                self.entry.delete(0, tk.END)
+                self.entry.focus()
+
+            else:
+                self.active = False
+                self.stopTimer()
+
+                messagebox.showerror(
+                    "Incorrect !",
+                    f"le answer was{self.correct}."
+                )
+
+                self.root.after(300, self.nextQuestion)
 
 root = tk.Tk()
 app = MathQuiz(root)
