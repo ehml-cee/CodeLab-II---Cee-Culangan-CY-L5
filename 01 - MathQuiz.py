@@ -300,6 +300,41 @@ class MathQuiz:
         self.time = 10
         self.updateTimer()
 
+    def updateTimer(self):
+        if not self.active:
+            return
+
+        self.bar["value"] = self.time * 10
+
+        if self.time <= 3:
+            colour = "Red"
+        elif self.time <= 6:
+            colour = "Orange"
+        else:
+            colour = "Green"
+
+        self.bar.configure(
+            style=f"{colour}.Horizontal.TProgressbar"
+        )
+
+        if self.time == 0:
+            self.active = False
+            self.duration = None
+
+            messagebox.showwarning(
+                "Time's Up",
+                f"You're out of time !\n"
+                f"The answer was {self.correct}."
+            )
+
+            self.nextQuestion()
+
+        else:
+            self.time -= 1
+            self.duration = self.root.after(
+                1000, self.updateTimer
+            )
+
 root = tk.Tk()
 app = MathQuiz(root)
 root.mainloop()
